@@ -1,0 +1,20 @@
+{% extends "base_customer.html" %}
+{% block title %} Update Status {% endblock %}
+{% block head %}
+  <title>E-Commerce GoFit Profile</title>
+{% endblock %}
+
+{% block content %}
+<div class="profile-body">
+    <div class="profile-posts tab">
+        <h1>Your Post</h1>
+        {% from "includes/formHelper.html" import render_field %}
+        <form method="POST" action="">
+            <div class="form-group">
+                {{ render_field(form.status, class="form-control") }}
+            </div>
+            <button type="submit" value="Submit" class="btn btn-primary save-changes" id="update">SAVE CHANGES</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

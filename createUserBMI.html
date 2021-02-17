@@ -1,0 +1,48 @@
+{% extends "base_staff.html" %}
+{% block title %} Dashboard Create User BMI{% endblock %}
+<head>
+  <title>E-Commerce GoFit Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+{% block content %}
+
+            <!-- Begin Page Content -->
+
+        {% from "includes/formHelper.html" import render_field %}
+        <div id="create_content" style="padding-left:30px; padding-top:20px; padding-right:30px; padding-bottom:50px;">
+            <h1 class="display-7">User Body Mass Index Records</h1>
+
+            <form method="POST" action="" autocomplete="off">
+                  <div id="prof1">
+                </div>
+                <div id="prof1">
+                    <div class="form-group">
+                        {{ render_field(form.first_name, class="form-control") }}
+                    </div>
+                </div>
+                <div id="prof1">
+                    <div class="form-group">
+                        {{ render_field(form.last_name, class="form-control") }}
+                    </div>
+                </div>
+
+               <div id="prof1">
+                    <div class="form-group">
+                        {{ render_field(form.height, class="form-control") }}
+                    </div>
+                </div>
+                <div id="prof2">
+                    <div class="form-group">
+                        {{ render_field(form.weight, class="form-control") }}
+                    </div>
+                </div>
+                <div id="prof">
+                    <div class="form-group">
+                        {{ render_field(form.remarks, class="form-control") }}
+                    </div>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary" style="float:right"/>
+            </form>
+                </div>
+{% endblock %}

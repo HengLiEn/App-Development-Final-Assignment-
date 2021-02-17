@@ -1,0 +1,45 @@
+{% extends "base_customer.html" %}
+{% block title %} Shop Cart {% endblock %}
+{% block head %}
+
+<head>
+  <title>E-Commerce GoFit Shop - retrievePayment Detail</title>
+  <link rel="stylesheet" href="../static/css/updatePayment.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+{% endblock %}
+
+{% block content %}
+<a href="{{ url_for('addProduct') }}">Add Product</a>
+<div class="padding">
+  <h1>Shop Items Detail</h1>
+
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Item Price</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for userProduct in product_list  %}
+        <tr>
+          <td>{{userProduct.get_product_name()}}</td>
+          <td>${{userProduct.get_product_price()}}</td>
+          <td><a href="/updateProduct/{{userProduct.get_product_name()}}" class="btn btn-warning">Update</a></td>
+          <td>
+            <form action="{{url_for('delete_product', id=userProduct.get_product_name())}}"  method="POST">
+              <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+
+    </table>
+  </div>
+</div>
+{% endblock %}

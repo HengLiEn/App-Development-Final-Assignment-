@@ -1,0 +1,151 @@
+{% extends "base_customer.html" %}
+{% block title %} Create Status {% endblock %}
+{% block head %}
+  <title>E-Commerce GoFit Profile</title>
+  <link rel="stylesheet" href="../static/css/profile.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  #rcorners2 {
+          border-radius: 25px;
+          background-color:white;
+          padding: 20px;
+          width: 780px;
+          height: 250px;
+          text-align:left;
+        }
+</style>
+{% endblock %}
+
+{% block content %}
+<!--  {% from "includes/formHelper.html" import render_field %}-->
+
+<div style="height: 1200px;">
+   <div class="container">
+      <div class="profile-header">
+         <div class="profile-img">
+            <img src="{{url_for('static', filename='images/user-1.png')}}" width="200" alt="Profile Image">
+         </div>
+         <div class="profile-nav-info">
+            <h3 class="user-name">{{ user }}</h3>
+            <div class="address">
+               <p id="state" class="state">Singapore,</p>
+               <span id="country" class="country">SG.</span>
+            </div>
+         </div>
+         <div class="profile-option">
+            <div class="notification">
+               <i class="fa fa-bell"></i>
+               <span class="alert-message">3</span>
+            </div>
+         </div>
+      </div>
+      <div class="main-bd">
+         <div class="left-side">
+            <div class="profile-side">
+               <p class="mobile-no"><i class="fa fa-phone"></i> +65 965320XX</p>
+               <p class="user-mail"><i class="fa fa-envelope"></i> cecilagaming@gmail.com</p>
+               <div class="user-bio">
+                  <h3>Bio</h3>
+                  <p class="bio">
+                     Hi! I'm 19, loves to eat healthy fruits and veggies! Gym enthusiast, loves to do charity to help the society in need!
+                  </p>
+               </div>
+               <div class="profile-btn">
+                  <button class="chatbtn" id="chatBtn"><i class="fa fa-comment"></i> Chat</button>
+                  <button class="createbtn" onclick="window.location.href='{{url_for('createUserReview')}}'" id="Create-post"><i class="fa fa-plus"></i> Create</button>
+               </div>
+               <div class="user-rating">
+                  <h3 class="rating">4.5</h3>
+                  <div class="rate">
+                     <div class="star-outer">
+                        <div class="star-inner">
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                        </div>
+                     </div>
+                     <span class="no-of-user-rate"><span>123</span>&nbsp;&nbsp;reviews</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="right-side">
+            <div class="nav">
+               <ul>
+                  <li onclick="tabs(0)" class="user-post active">Posts</li>
+                  <li onclick="tabs(1)" class="user-review">Reviews</li>
+                  <li onclick="tabs(2)" class="user-setting"> Settings</li>
+               </ul>
+            </div>
+            <div class="profile-body">
+               <div class="profile-posts tab">
+                  <h1>Your Post</h1>
+                    {% from "includes/formHelper.html" import render_field %}
+                  <form method="POST" action="">
+                  <div class="form-group">
+                        {{ render_field(form.status, class="form-control") }}
+                  </div>
+                      <button type="submit" value="Submit" class="btn btn-primary save-changes">CREATE</button>
+                  </form>
+               </div>
+               <div class="profile-reviews tab">
+                   <div class="testimonial">
+                    <div class="small-container">
+                        <div class="row">
+                            {% for userReview in review_list  %}
+                              <div class="col-3">
+                                  <p id="rcorners2">
+                                  {{userReview.get_review()}}
+                                  </p>
+                              </div>
+                  {% endfor %}
+           </div>
+          </div>
+      </div>
+     </div>
+
+
+               </div>
+               <div class="profile-settings tab">
+                  <div class="account-setting">
+                     <div class="padding">
+                        <div class="row">
+                           <div class="container-fluid d-flex justify-content-center">
+                              <div class="col-sm-8 col-md-6">
+                                 <div class="edit">
+                                    <div class="card-header">
+                                       <div class="row">
+                                          <div class="col-md-6">
+                                             <span>PROFILE INFORMATION</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="card-body">
+                                      <form method="POST" action="">
+
+                                        <div>
+                                          <button class="btn btn-primary save-changes" type="submit"><a href=to_admin style="text-decoration:none;color:#ffffff">SAVE CHANGES</a></button>
+                                        </div>
+                                        <div>
+                                          <button class="btn btn-primary save-changes" type="button"><a href="{{ url_for('to_home') }}" style="text-decoration:none;color:#ffffff">LOGOUT</a></button>
+                                        </div>
+
+                                      </form>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+    {% block scripts %}
+<script src="../static/js/profile.js"></script>
+    {% endblock %}
+{% endblock %}

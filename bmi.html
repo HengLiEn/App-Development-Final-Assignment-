@@ -1,0 +1,137 @@
+{% extends "base_staff.html" %}
+{% block title %} Dashboard Overview{% endblock %}
+
+<head>
+  <title>E-Commerce GoFit Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+{% block content %}
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Users' Body Mass Index Records</h6>
+                                <div class="dropdown no-arrow">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                         aria-labelledby="dropdownMenuLink">
+                                        <div class="dropdown-header">Actions</div>
+                                        <a class="dropdown-item" href="/createUserBMI"><i class="fas fa-plus"></i> Add
+                                            New Record</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div>
+                                    {% if count == 0 %}
+                                    <p>There are no User's Body Mass Index records.</p>
+                                    {% elif count == 1 %}
+                                    <p>There is 1 entry of User's Body Mass Index record.</p>
+                                    {% else %}
+                                    <p>There are {{ count }} User's Body Mass Index records.</p>
+                                    {% endif %}
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover" id="staff_records" width="100%"
+                                           cellspacing="0">
+                                        <thead>
+                                        <tr>
+
+                                            <th>User ID</th>
+                                            <th>Height(CM)</th>
+                                            <th>Weight(KG)</th>
+                                            <th>User's BMI Calculation </th>
+                                            <th>Actions</th>
+
+
+
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr>
+                                       {% for user in bmi_list %}
+                                                <td>{{ user.get_user_id() }}</td>
+                                                <td>{{ user.get_height() }}</td>
+                                                <td>{{ user.get_weight()}}</td>
+                                                <td>{{user.get_bmi()}}</td>
+                                                <td style="padding-left:8px;padding-right:8px">
+                                                    <a
+                                                    href="updateBMI/{{user.get_user_id()}}"
+                                                    class="btn btn-warning btn-sm"
+                                                    style="padding-left:8px; padding-right:8px; float:left;">Update
+                                                    </a>
+
+                                                    <form action="deleteBMI/{{user.get_user_id()}}"
+                                                      method="POST">
+                                                    <!-- Button to Open the Modal -->
+                                                    <button type="button" class="btn btn-danger btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#modal"
+                                                            style="padding-left:11px; padding-right:11px;">
+                                                        Delete
+                                                    </button>
+
+                                                    <!-- The Modal -->
+                                                    <div class="modal" id="modal">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Delete Confirmation</h4>
+                                                                    <button type="button" class="close"
+                                                                            data-dismiss="modal">&times;
+                                                                    </button>
+                                                                </div>
+
+                                                                <!-- Modal body -->
+                                                                <div class="modal-body">
+                                                                    Are you sure you want to delete record
+                                                                </div>
+
+                                                                <!-- Modal footer -->
+                                                                <div class="modal-footer">
+                                                                    <input type="submit" value="Delete"
+                                                                           class="btn btn-danger">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">Cancel
+                                                                    </button>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        </form>
+                                        </td>
+                                        </tr>
+                                        {% endfor %}
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+{% endblock %}

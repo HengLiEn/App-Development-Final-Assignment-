@@ -1,0 +1,70 @@
+{% extends "base_customer.html" %}
+{% block title %} Shop Cart {% endblock %}
+{% block head %}
+
+<head>
+  <title>E-Commerce GoFit Shop - retrievePayment Detail</title>
+  <link rel="stylesheet" href="../static/css/updatePayment.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+{% endblock %}
+
+{% block content %}
+<div class="padding">
+  <h1>Retrieve Users Payment Detail</h1>
+  <div>
+    {% if count == 0 %}
+    <p>There are no Payment Detail.</p>
+    {% elif count == 1 %}
+    <p>There is 1 Payment Detail.</p>
+    {% else %}
+    <p>There are {{ count }} Payment Detail.</p>
+    {% endif %}
+  </div>
+
+  {% if 'user_updated' in session %}
+  <div class="alert alert-warning alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    {{ session.pop('user_updated', None) }} was updated.
+  </div>
+  {% elif 'user_deleted' in session %}
+  <div class="alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    {{ session.pop('user_deleted', None) }} was deleted.
+  </div>
+  {% endif %}
+
+
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Card Number</th>
+          <th>Card Name</th>
+          <th>Card Expiry</th>
+          <th>Card CVC</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for payment in payment_list %}
+        <tr>
+          <td>{{ payment.get_card_number() }}</td>
+          <td>{{ payment.get_card_name() }}</td>
+          <td>{{ payment.get_card_exp() }}</td>
+          <td>{{ payment.get_card_cvc() }}</td>
+          <td><a href="/updatePayment/{{payment.get_card_number()}}" class="btn btn-warning">Update</a></td>
+          <td>
+            <form action="{{url_for('delete_payment', id=payment.get_card_number())}}" method="POST">
+              <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+
+    </table>
+  </div>
+</div>
+{% endblock %}

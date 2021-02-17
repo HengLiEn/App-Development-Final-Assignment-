@@ -1,0 +1,44 @@
+{% extends "base_customer.html" %}
+{% block title %} Shop Cart {% endblock %}
+{% block head %}
+
+<head>
+  <title>E-Commerce GoFit Shop - All Products</title>
+  <link rel="stylesheet" href="../static/css/shop.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+{% endblock %}
+
+{% block content %}
+
+<div class="container border rounded" style="max-width:520px">
+    <div class="content-section">
+        <form method="POST" enctype=multipart/form-data>
+            {% from "includes/formHelper.html" import render_field %}
+            <fieldset class="form-group">
+                <center><legend class="border-bottom mb-4 display-4 pt-3">Add Product</legend></center>
+                <div class="form-group">
+                    {{ render_field(form.product_img, class="form-control-file") }}
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.product_name, class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.product_price, class="form-control") }}
+                </div>
+            </fieldset>
+            <div class="row">
+                <div class="form-group col">
+                    <input type="submit" value="Submit" class="btn btn-outline-info">
+                </div>
+                <div class="form-group col text-right">
+                    <a href="{{ url_for('to_home') }}" class="btn btn-outline-danger">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<br><br><br>
+
+
+{% endblock %}

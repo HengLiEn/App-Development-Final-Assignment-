@@ -1,0 +1,671 @@
+{% extends "base_customer.html" %}
+{% block title %}GoFit Home Page {% endblock %}
+{% block head %}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>GoFit Home</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+ <link rel="icon" href="{{ url_for('static',filename='images/barbell.png')}}">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+    <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='vendor/icofont/icofont.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='vendor/venobox/venobox.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='vendor/aos/aos.css')}} " rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+    <link href="{{url_for('static', filename='css/style1.css')}}" rel="stylesheet">
+
+</head>
+{%endblock %}
+{% block content %}
+<body>
+
+  <!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+
+    <div class="container-fluid" data-aos="zoom-out" data-aos-delay="100">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <div class="row">
+                    <div class="col-xl-5">
+                        <h1>Better stay-home workout experience with GoFit</h1>
+                        <h2>You know you need to exercise, so why not get it done as efficiently as possible?</h2>
+                        <a href="{{ url_for('to_login') }}" class="btn-get-started scrollto">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section><!-- End Hero -->
+
+<main id="main">
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients">
+        <div class="container-fluid" data-aos="zoom-in">
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="owl-carousel clients-carousel">
+                        <img src=" {{url_for('static', filename='images/clients/client-1.png')}}">
+                        <img src=" {{url_for('static', filename='images/clients/client-2.png')}}">
+                        <img src=" {{url_for('static', filename='images/clients/client-3.png')}}">
+                        <img src=" {{url_for('static', filename='images/clients/client-4.png')}}">
+                        <img src=" {{url_for('static', filename='images/clients/client-5.png')}}">
+                        <img src=" {{url_for('static', filename='images/clients/client-6.png')}}">
+                        <img src=" {{url_for('static', filename='images/clients/client-7.png')}}">
+                        <img src=" {{url_for('static', filename='images/clients/client-8.png')}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Clients Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row no-gutters">
+                <div class="content col-xl-5 d-flex align-items-stretch">
+                    <div class="content">
+                        <h3>Work out at home for free.</h3>
+                        <p>
+                            We believe fitness should be accessible to everyone, everywhere, regardless of income or
+                            access to a gym. With hundreds of professional workouts, healthy recipes and informative
+                            articles, as well as one of the most positive communities on the web, you’ll have everything
+                            you need to reach your personal fitness goals – for free!
+                        </p>
+                        <a href="#" class="about-btn"><span>About us</span> <i class="bx bx-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-stretch">
+                    <div class="icon-boxes d-flex flex-column justify-content-center">
+                        <div class="row">
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                                <i class="bx bx-receipt"></i>
+                                <h4>GET IN AND OUT IN 30 MINUTES</h4>
+                                <p>If you do it right (and we’ll show you how), science says you can get a safe,
+                                    high-quality and effective workout and be out the door in half an hour</p>
+                            </div>
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                                <i class="bx bx-cube-alt"></i>
+                                <h4>LOW-COST TRAINING PROGRAMS</h4>
+                                <p>Training Programs starts from as low as $0! Upgrade it to enjoy premium benefits</p>
+                            </div>
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                                <i class="bx bx-img"></i>
+                                <h4>ADVANCED FEATURES</h4>
+                                <p>Our site introduces tons of features for you to regulate your workout and get in
+                                    shape</p>
+                            </div>
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                                <i class="bx bx-shield"></i>
+                                <h4>IN COLLABORATION WITH ACTIVE SG</h4>
+                                <p>We are a official website endorsed by the government, trainers are all certified</p>
+                            </div>
+                        </div>
+                    </div><!-- End .content-->
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="icofont-simple-smile"></i>
+                        <span data-toggle="counter-up">{{count_beginner}}</span>
+                        <p>"Beginner" Users</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                    <div class="count-box">
+                        <i class="icofont-document-folder"></i>
+                        <span data-toggle="counter-up">{{count_standard}}</span>
+                        <p>"Standard" Users</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                    <div class="count-box">
+                        <i class="icofont-live-support"></i>
+                        <span data-toggle="counter-up">{{count_intermediate}}</span>
+                        <p>"Intermediate" Users</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                    <div class="count-box">
+                        <i class="icofont-users-alt-5"></i>
+                        <span data-toggle="counter-up">{{count_users}}</span>
+                        <p>Total Number of Users</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg ">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Services</h2>
+                <p>Here at GoFit, we provide you multiple services on this website once you've created an account with us.
+                    Our main services are as listed.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <i class="icofont-computer"></i>
+                        <h4><a href="#">Check Your BMI</a></h4>
+                        <p>Are you in the healthy range? Use this tool to calculate your Body Mass Index (BMI) now to
+                            know your risk for obesity-related diseases. A BMI value of 23 and above indicates that your
+                            weight is outside of the healthy weight range for your height. Find out more by using our Tracker now!</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                        <i class="icofont-chart-bar-graph"></i>
+                        <h4><a href="#">Customize Your Routine</a></h4>
+                        <p>Step up your workout game by personalizing your own planner to avoid scheduling conflicts,
+                            and delegate tasks without losing sight of the big goal. You can choose to plan for days, weeks,
+                            or even months later! Plan ahead for a clearer path towards your body goals.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                        <i class="icofont-image"></i>
+                        <h4><a href="#">Switch Up Your Diet</a></h4>
+                        <p>Eating the right foods in the appropriate amounts provides your muscles with the nutrients
+                            they need to recover from workouts and grow bigger and stronger.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                        <i class="icofont-settings"></i>
+                        <h4><a href="#">Shop For Your Exercise Needs</a></h4>
+                        <p>Get your workout necessities with us! Lowest price guaranteed across all retailers. New Customers
+                            can enjoy a 10% off during checkout.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Services Section -->
+
+<!--    &lt;!&ndash; ======= Portfolio Section ======= &ndash;&gt;-->
+<!--    <section id="portfolio" class="portfolio">-->
+<!--        <div class="container" data-aos="fade-up">-->
+
+<!--            <div class="section-title">-->
+<!--                <h2>Portfolio</h2>-->
+<!--                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint-->
+<!--                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>-->
+<!--            </div>-->
+
+<!--            <div class="row" data-aos="fade-up" data-aos-delay="100">-->
+<!--                <div class="col-lg-12 d-flex justify-content-center">-->
+<!--                    <ul id="portfolio-flters">-->
+<!--                        <li data-filter="*" class="filter-active">All</li>-->
+<!--                        <li data-filter=".filter-app">App</li>-->
+<!--                        <li data-filter=".filter-card">Card</li>-->
+<!--                        <li data-filter=".filter-web">Web</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">-->
+
+<!--                <div class="col-lg-4 col-md-6 portfolio-item filter-app">-->
+<!--                    <div class="portfolio-wrap">-->
+<!--                        <img src=" {{url_for('static', filename='images/portfolio/portfolio-1.jpg')}}" alt=""-->
+<!--                             class="img-fluid">-->
+<!--                        <div class="portfolio-info">-->
+<!--                            <h4>App 1</h4>-->
+<!--                            <p>App</p>-->
+<!--                            <div class="portfolio-links">-->
+<!--                                <a href="{{url_for('static', filename='images/portfolio/portfolio-1.jpg')}}"-->
+<!--                                   data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>-->
+<!--                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-4 col-md-6 portfolio-item filter-web">-->
+<!--                    <div class="portfolio-wrap">-->
+<!--                        <img src="{{url_for('static', filename='images/portfolio/portfolio-2.jpg')}}" class="img-fluid"-->
+<!--                             alt="">-->
+<!--                        <div class="portfolio-info">-->
+<!--                            <h4>Web 3</h4>-->
+<!--                            <p>Web</p>-->
+<!--                            <div class="portfolio-links">-->
+<!--                                <a href="{{url_for('static', filename='images/portfolio/portfolio-2.jpg')}}"-->
+<!--                                   data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>-->
+<!--                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-4 col-md-6 portfolio-item filter-app">-->
+<!--                    <div class="portfolio-wrap">-->
+<!--                        <img src="{{url_for('static', filename='images/portfolio/portfolio-3.jpg')}}" class="img-fluid"-->
+<!--                             alt="">-->
+<!--                        <div class="portfolio-info">-->
+<!--                            <h4>App 2</h4>-->
+<!--                            <p>App</p>-->
+<!--                            <div class="portfolio-links">-->
+<!--                                <a href="{{url_for('static', filename='images/portfolio/portfolio-3.jpg')}}"-->
+<!--                                   data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>-->
+<!--                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-4 col-md-6 portfolio-item filter-card">-->
+<!--                    <div class="portfolio-wrap">-->
+<!--                        <img src="{{url_for('static', filename='images/portfolio/portfolio-4.jpg')}}" class="img-fluid"-->
+<!--                             alt="">-->
+<!--                        <div class="portfolio-info">-->
+<!--                            <h4>Card 2</h4>-->
+<!--                            <p>Card</p>-->
+<!--                            <div class="portfolio-links">-->
+<!--                                <a href="{{url_for('static', filename='images/portfolio/portfolio-4.jpg')}}"-->
+<!--                                   data-gall="portfolioGallery" class="venobox" title="Card 2"><i-->
+<!--                                        class="bx bx-plus"></i></a>-->
+<!--                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-4 col-md-6 portfolio-item filter-web">-->
+<!--                    <div class="portfolio-wrap">-->
+<!--                        <img src="{{url_for('static', filename='images/portfolio/portfolio-5.jpg')}}" class="img-fluid"-->
+<!--                             alt="">-->
+<!--                        <div class="portfolio-info">-->
+<!--                            <h4>Web 2</h4>-->
+<!--                            <p>Web</p>-->
+<!--                            <div class="portfolio-links">-->
+<!--                                <a href="{{url_for('static', filename='images/portfolio/portfolio-5.jpg')}} data-gall="-->
+<!--                                   portfolioGallery" class="venobox" title="Web 2"><i class="bx bx-plus"></i></a>-->
+<!--                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-4 col-md-6 portfolio-item filter-app">-->
+<!--                    <div class="portfolio-wrap">-->
+<!--                        <img src="{{url_for('static', filename='images/portfolio/portfolio-6.jpg')}}" class="img-fluid"-->
+<!--                             alt="">-->
+<!--                        <div class="portfolio-info">-->
+<!--                            <h4>App 3</h4>-->
+<!--                            <p>App</p>-->
+<!--                            <div class="portfolio-links">-->
+<!--                                <a href="{{url_for('static', filename='img/portfolio/portfolio-6.jpg')}}"-->
+<!--                                   data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>-->
+<!--                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-4 col-md-6 portfolio-item filter-card">-->
+<!--                    <div class="portfolio-wrap">-->
+<!--                        <img src="{{url_for('static', filename='images/portfolio/portfolio-7.jpg')}}" class="img-fluid"-->
+<!--                             alt="">-->
+<!--                        <div class="portfolio-info">-->
+<!--                            <h4>Card 1</h4>-->
+<!--                            <p>Card</p>-->
+<!--                            <div class="portfolio-links">-->
+<!--                                <a href="{{url_for('static', filename='images/portfolio/portfolio-7.jpg')}}"-->
+<!--                                   data-gall="portfolioGallery" class="venobox" title="Card 1"><i-->
+<!--                                        class="bx bx-plus"></i></a>-->
+<!--                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-4 col-md-6 portfolio-item filter-card">-->
+<!--                    <div class="portfolio-wrap">-->
+<!--                        <img src="{{url_for('static', filename='images/portfolio/portfolio-8.jpg')}}" class="img-fluid"-->
+<!--                             alt="">-->
+<!--                        <div class="portfolio-info">-->
+<!--                            <h4>Card 3</h4>-->
+<!--                            <p>Card</p>-->
+<!--                            <div class="portfolio-links">-->
+<!--                                <a href="s{{url_for('static', filename='img/portfolio/portfolio-8.jpg')}}"-->
+<!--                                   data-gall="portfolioGallery" class="venobox" title="Card 3"><i-->
+<!--                                        class="bx bx-plus"></i></a>-->
+<!--                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-4 col-md-6 portfolio-item filter-web">-->
+<!--                    <div class="portfolio-wrap">-->
+<!--                        <img src="{{url_for('static', filename='images/portfolio/portfolio-9.jpg')}}" class="img-fluid"-->
+<!--                             alt="">-->
+<!--                        <div class="portfolio-info">-->
+<!--                            <h4>Web 3</h4>-->
+<!--                            <p>Web</p>-->
+<!--                            <div class="portfolio-links">-->
+<!--                                <a href="{{url_for('static', filename='images/portfolio/portfolio-9.jpg')}}"-->
+<!--                                   data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>-->
+<!--                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </section>&lt;!&ndash; End Portfolio Section &ndash;&gt;-->
+
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Pricing</h2>
+                <p>Select your desired plans below.</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="box" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Free</h3>
+                        <h4><sup>$</sup>0<span> / month</span></h4>
+                        <ul>
+                            <li>1GB Storage Space</li>
+                            <li>1 Account</li>
+                            <li>12hr Daytime Customer Support</li>
+                            <li class="na">Real-Time Consultation with Trainers</li>
+                        </ul>
+                        <div class="btn-wrap">
+                            <a href="#" class="btn-buy">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+                    <div class="box featured" data-aos="fade-up" data-aos-delay="200">
+                        <h3>standard</h3>
+                        <h4><sup>$</sup>9.99<span> / month</span></h4>
+                        <ul>
+                            <li>3GB Storage</li>
+                            <li>2-3 Accounts</li>
+                            <li>24/7 Customer Support</li>
+                            <li>Real-Time Consultation with Trainers<li>
+                        </ul>
+                        <div class="btn-wrap">
+                            <a href="#" class="btn-buy">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+                    <div class="box" data-aos="fade-up" data-aos-delay="300">
+                        <h3>Pro</h3>
+                        <h4><sup>$</sup>18.99<span> / month</span></h4>
+                        <ul>
+                            <li>7GB Storage</li>
+                            <li>4-6 Accounts</li>
+                            <li>24/7 Customer Support</li>
+                            <li>Real-Time Consultation with Trainers</li>
+                        </ul>
+                        <div class="btn-wrap">
+                            <a href="#" class="btn-buy">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Pricing Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <ul class="faq-list" data-aos="fade-up">
+
+                <li>
+                    <a data-toggle="collapse" class="collapsed" href="#faq1">Should I approach my sessions with a plan?
+                        <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+                    <div id="faq1" class="collapse" data-parent=".faq-list">
+                        <p>
+                            Yes, this will help you get the most out of your workout. Decide which muscle groups you
+                            want to work on, whether you’re doing a strength session or a HIIT workout and what equipment
+                            you’ll need. Then, think about how many reps and sets you’re going to perform. That way,
+                            you won’t waste time procrastinating and you’ll work harder as a result.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" href="#faq2" class="collapsed">Do I need to vary my workout to see results?
+                        <i class="bx bx-chevron-down icon-show"></i><i
+                                class="bx bx-x icon-close"></i></a>
+                    <div id="faq2" class="collapse" data-parent=".faq-list">
+                        <p>
+                            If you want to see real change in your body you need to mix up your routine. The body
+                            quickly adapts to exercise and if you continue to do the same workout or use the same
+                            weights, it will plateau as it stops responding to the training stimulus. Increase frequency,
+                            intensity or the type of training as often as you can.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" href="#faq3" class="collapsed">What type of training do I need to do to
+                        increase muscle mass? <i class="bx bx-chevron-down icon-show"></i><i
+                                class="bx bx-x icon-close"></i></a>
+                    <div id="faq3" class="collapse" data-parent=".faq-list">
+                        <p>
+                            If you want to build muscle, you’ll need to start weight training. Lifting heavy weights
+                            effectively rips the muscle fibres and as the body repairs, it replaces damaged muscle fibres
+                            to form new strands. As a result, this increases the thickness and size of the muscle.
+
+                            Choose heavier weights for lower reps and take a longer rest between sets. It’s important to
+                            train the muscle groups you want to build a few times per week. And don’t forget to increase
+                            your calorie intake – you need to feed muscles if you want them to grow.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" href="#faq4" class="collapsed">When should I stretch and how often?
+                        <i class="bx bx-chevron-down icon-show"></i><i
+                                class="bx bx-x icon-close"></i></a>
+                    <div id="faq4" class="collapse" data-parent=".faq-list">
+                        <p>
+                            Start with some dynamic stretching (active muscular stretching such as walking lunges or
+                            jogging with high knees) before a workout. Then, do static stretches such as a standing
+                            thigh stretch or side lunge for post-workout recovery, focusing on the muscles you’ve worked.
+                            This will decrease your risk of injury, improve blood flow and circulation, increase your
+                            range of motion and improve muscle function. You can never stretch too much!
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" href="#faq5" class="collapsed">How does exercise help mental health?
+                        <i class="bx bx-chevron-down icon-show"></i><i
+                                class="bx bx-x icon-close"></i></a>
+                    <div id="faq5" class="collapse" data-parent=".faq-list">
+                        <p>
+                            Research has shown that exercise can help to reduce stress, improve your self-confidence,
+                            alleviate anxiety and improve concentration. Plus, it releases endorphins, which encourage
+                            feelings of happiness.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" href="#faq6" class="collapsed">What type of training do I need to do to lose weight?
+                        <i class="bx bx-chevron-down icon-show"></i><i
+                                class="bx bx-x icon-close"></i></a>
+                    <div id="faq6" class="collapse" data-parent=".faq-list">
+                        <p>
+                            Generally, cardio training such as swimming or running will burn the most calories per
+                            session. Weight training will help you burn more calories over the course of the day –
+                            muscle burns more calories at rest than other tissues, including fat, and therefore speeds
+                            up your resting metabolism.
+                        </p>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Team</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member-img">
+                            <img src="{{url_for('static', filename='images/team/team-1.jpg')}}" class="img-fluid" alt="">
+                            <div class="social">
+                                <a href=""><i class="icofont-twitter"></i></a>
+                                <a href=""><i class="icofont-facebook"></i></a>
+                                <a href=""><i class="icofont-instagram"></i></a>
+                                <a href=""><i class="icofont-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Walter White</h4>
+                            <span>Chief Executive Officer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member-img">
+                            <img src="{{url_for('static', filename='images/team/team-2.jpg')}}" class="img-fluid" alt="">
+                            <div class="social">
+                                <a href=""><i class="icofont-twitter"></i></a>
+                                <a href=""><i class="icofont-facebook"></i></a>
+                                <a href=""><i class="icofont-instagram"></i></a>
+                                <a href=""><i class="icofont-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Sarah Jhonson</h4>
+                            <span>Product Manager</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="300">
+                        <div class="member-img">
+                            <img src="{{url_for('static', filename='images/team/team-3.jpg')}}" class="img-fluid" alt="">
+                            <div class="social">
+                                <a href=""><i class="icofont-twitter"></i></a>
+                                <a href=""><i class="icofont-facebook"></i></a>
+                                <a href=""><i class="icofont-instagram"></i></a>
+                                <a href=""><i class="icofont-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>William Anderson</h4>
+                            <span>CTO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="400">
+                        <div class="member-img">
+                            <img src="{{url_for('static', filename='images/team/team-4.jpg')}}" class="img-fluid" alt="">
+                            <div class="social">
+                                <a href=""><i class="icofont-twitter"></i></a>
+                                <a href=""><i class="icofont-facebook"></i></a>
+                                <a href=""><i class="icofont-instagram"></i></a>
+                                <a href=""><i class="icofont-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Amanda Jepson</h4>
+                            <span>Accountant</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Team Section -->
+
+</main><!-- End #main -->
+
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+<script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{url_for('static', filename='vendor/jquery.easing/jquery.easing.min.js')}}"></script>
+<script src="{{url_for('static', filename='vendor/php-email-form/validate.js')}}"></script>
+<script src="{{url_for('static', filename='vendor/owl.carousel/owl.carousel.min.js')}}  "></script>
+<script src="{{url_for('static', filename='vendor/waypoints/jquery.waypoints.min.js')}}  "></script>
+<script src="{{url_for('static', filename='vendor/counterup/counterup.min.js')}}  "></script>
+<script src="{{url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+<script src="{{url_for('static', filename='vendor/venobox/venobox.min.js')}}"></script>
+<script src="{{url_for('static', filename='vendor/aos/aos.js')}} "></script>
+
+  <!-- Template Main JS File -->
+<script src="{{url_for('static', filename='js/main1.js')}}"></script>
+
+</body>
+
+{% endblock %}

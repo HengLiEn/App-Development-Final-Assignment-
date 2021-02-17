@@ -1,0 +1,19 @@
+.padding {
+    padding: 6rem
+}
+
+.form-control:focus {
+    box-shadow: 10px 0px 0px 0px #ffffff;
+    border-color: #4ca746
+}
+img {
+  width: 20%;
+  height: auto;
+  margin-top: -5px;
+}
+.card-body{
+    height: 500px;
+}
+.btn-primary{
+    width: 510px;
+}
